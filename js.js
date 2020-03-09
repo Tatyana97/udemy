@@ -17,7 +17,7 @@ ask_2 = prompt("Во сколько обойдется?", ''),
 ask_3 = prompt("Введите обязательную статью расходов в этом месяце", ''),
 ask_4 = prompt("Во сколько обойдется?", '');
 
-expenses.ask_1 = ask_2;
-expenses.ask_3 = ask_4;
+appData.expenses.ask_1 = ask_2;
+appData.expenses.ask_3 = ask_4;
 
 alert(appData.budget / 30);
