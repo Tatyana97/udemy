@@ -2,8 +2,9 @@ let money;
 let time;
 
 function start() {
-    money = prompt("Ваш бюджет на месяц?", '');
-    time = +prompt("Введите дату в формате YYYY-MM-DD", '');
+    time = prompt("Введите дату в формате YYYY-MM-DD", '');
+    money = +prompt("Ваш бюджет на месяц?", '');
+    
 
     while (isNaN(money) || money == "" || money == null) {
         money = prompt("Ваш бюджет на месяц?", '');
@@ -68,7 +69,7 @@ let appData = {
 
         let items = prompt("Что принесет дополнительный доход? (Перечислить через запятую)", "");
 
-        if (typeof (items) != "string" || items == "" || typeof (items) == null) {
+        if (+items/2 != NaN || items == "" || items == null) {
             console.log("Что принесет дополнительный доход? (Перечислить через запятую)"); //! Написать проверку, что пользователь может: Ввести в дополнительных доходах (chooseIncome) только строку, Не может оставить строку пустой,  Не может отменить вопрос 
         } else {
             appData.income = items.split(", ");
@@ -85,3 +86,5 @@ let appData = {
 for( let key in appData){
     console.log("Наша программа включает в себя данные: " + key + "- " + appData[key]);
 }
+
+appData.chooseIncome();
